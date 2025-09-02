@@ -6,13 +6,11 @@ class Solution {
             prefix[i]=prefix[i-1]*nums[i-1];
         }
         int arr[]= new int[nums.length];
-        int suffix[]=new int[nums.length];
-        suffix[nums.length-1]=1;
+         arr[nums.length-1]=prefix[nums.length-1];
+        int suffix=1;
         for(int i=nums.length-2;i>=0;i--){
-            suffix[i]=suffix[i+1]*nums[i+1];
-        }
-        for(int i=0;i<arr.length;i++){
-            arr[i]=suffix[i]*prefix[i];
+            suffix=suffix*nums[i+1];
+            arr[i]=suffix*prefix[i];
         }
         return arr;
 
