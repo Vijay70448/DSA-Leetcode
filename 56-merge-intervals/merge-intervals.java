@@ -12,6 +12,9 @@ class Solution {
                 if(end>=intervals[j][0]){
                     end=Math.max(end,intervals[j][1]);
                 }
+                else{
+                    break;
+                }
             }
             ArrayList<Integer> l= new ArrayList<>();
             l.add(start);
