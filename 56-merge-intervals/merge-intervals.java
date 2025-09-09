@@ -1,27 +1,30 @@
 class Solution {
-    public int[][] merge(int[][] arr) {
-        Arrays.sort(arr,(a,b)->a[0]-b[0]);
-        int nums[][]= new int[arr.length][2];
-        int k=0;
-        for(int i=0;i<arr.length;i++){
-            int start=arr[i][0];
-            int end=arr[i][1];
-            if(k>0 && end<=nums[k-1][1]){
+    public int[][] merge(int[][] intervals) {
+        Arrays.sort(intervals,(a,b)->(a[0]-b[0]));
+        ArrayList<ArrayList<Integer>> list= new ArrayList<>();
+        for(int i=0;i<intervals.length;i++){
+            int start=intervals[i][0];
+            int end=intervals[i][1];
+            if(!list.isEmpty() && end<=list.get(list.size()-1).get(1)){
                 continue;
             }
-            for(int j=i+1;j<arr.length;j++){
-                if(end>=arr[j][0]){
-                    end=Math.max(end,arr[j][1]);
-                }
-                else{
-                    break;
+            for(int j=i+1;j<intervals.length;j++){
+                if(end>=intervals[j][0]){
+                    end=Math.max(end,intervals[j][1]);
                 }
             }
-            nums[k][0]=start;
-            nums[k][1]=end;
-            k++;
+            ArrayList<Integer> l= new ArrayList<>();
+            l.add(start);
+            l.add(end);
+            list.add(l);
+        } 
+        int arr[][]= new int[list.size()][2];
+        int a=0;
+        for(ArrayList<Integer> chintu :list){
+            arr[a][0]=chintu.get(0);
+            arr[a][1]=chintu.get(1);
+            a++;
         }
-        return Arrays.copyOfRange(nums,0,k);
-        
+        return arr;
     }
 }
