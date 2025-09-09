@@ -10,9 +10,6 @@ class Solution {
           reverse = a+reverse*10;
           x=x/10;
         }
-        // if(reverse==original){
-        //     return true;
-        // }
         return reverse==original;
     }
 }
