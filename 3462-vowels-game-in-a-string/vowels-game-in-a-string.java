@@ -27,6 +27,7 @@ class Solution {
         for(int i=0;i<s.length();i++){
             if(isvowel(s.charAt(i))){
                 count++;
+                break;
             }
         }
         return count!=0;
