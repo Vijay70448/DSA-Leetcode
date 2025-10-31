@@ -7,6 +7,9 @@ class Solution {
             if(nums[i]==nums[i+1]){
                 arr[j++]=nums[i];
             }
+            if(j==2){
+                break;
+            }
         }
         return arr;
         
