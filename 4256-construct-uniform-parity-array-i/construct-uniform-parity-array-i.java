@@ -42,7 +42,7 @@ class Solution {
             }
         }
         boolean flag1=true;
-        for(int key:nums1){
+        for(int key:arr){
             if(key%2!=0){
                 flag1=false;
                 break;
@@ -72,7 +72,7 @@ class Solution {
         }
 
         boolean flag2=true;
-        for(int key:nums1){
+        for(int key:arr){
             if(key%2==0){
                 f2=false;
                 break;
