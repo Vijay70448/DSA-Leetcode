@@ -5,9 +5,9 @@
 var runningSum = function(nums) {
 
     let arr= new Array(nums.length);
-    let sum=nums[0];
-    arr[0]=sum;
-    for(let i=1;i<nums.length;i++){
+    let sum=0;
+    
+    for(let i=0;i<nums.length;i++){
         sum+=nums[i];
         arr[i]=sum;
     }
