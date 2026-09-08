@@ -8,10 +8,6 @@ var countCommas = function(n) {
         return 0;
     }
 
-    let count=0;
-    for(let i=n;i>=1000;i--){
-        count++;
-    }
-    return count;
+    return n-1000+1;
     
 };
