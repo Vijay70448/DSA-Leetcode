@@ -8,13 +8,11 @@ var findDuplicates = function(nums) {
     }
 
     let arr= new Array();
-    let set = new Set();
-    for(let i=0;i<nums.length;i++){
-        if(set.has(nums[i])){
+    //let set = new Set();
+    nums.sort((a,b)=>a-b);
+    for(let i=0;i<nums.length-1;i++){
+        if(nums[i]===nums[i+1]){
             arr.push(nums[i]);
-        }
-        else{
-            set.add(nums[i]);
         }
     }
     return arr;
