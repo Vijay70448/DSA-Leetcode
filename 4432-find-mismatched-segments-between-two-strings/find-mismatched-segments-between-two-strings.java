@@ -26,7 +26,7 @@ class Solution {
                 sb2.setLength(0);
                 flag=false;
             }
-            System.out.println(list);
+            //System.out.println(list);
         }
 
         if(flag){
